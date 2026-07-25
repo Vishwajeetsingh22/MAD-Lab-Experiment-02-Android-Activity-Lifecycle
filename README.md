@@ -1,6 +1,7 @@
 Exp_1 — Hello World Android App
 A simple Android application built with Kotlin that displays custom text on screen using a TextView inside a ConstraintLayout. Created as Experiment 1 for Mobile Application Development.
 
+
 📱 Features
 Single-activity Android app (MainActivity.kt)
 ConstraintLayout-based UI with a centered TextView
