@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
 
+    <!-- Displays the current Activity Lifecycle method -->
     <TextView
+        android:id="@+id/txtLifecycle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mobile Application Development"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Activity Lifecycle"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Main text -->
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Activity Lifecycle Demo&#10;VISHWAJEET SINGH&#10;USN: 25MCAR0219"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Button to change UI -->
+    <Button
+        android:id="@+id/btnChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change UI"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
