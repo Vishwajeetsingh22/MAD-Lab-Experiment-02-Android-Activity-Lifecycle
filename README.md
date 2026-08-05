@@ -1,29 +1,46 @@
-# 📱 Exp_1 — Hello World Android App
+# 📱 MAD Lab Experiment 02 – Android Activity Lifecycle
 
-A simple Android application developed using **Kotlin** that displays custom text on the screen using a `TextView` inside a `ConstraintLayout`. This project was created as **Experiment 1** for the **Mobile Application Development (MAD) Lab**.
-
----
-
-## 📖 About the Project
-
-This application demonstrates the fundamentals of Android application development. It consists of a single activity that displays the text **"Mobile Application Development"** at the center of the screen. The project also implements **Edge-to-Edge Display** using AndroidX APIs for a modern user interface.
+An Android application developed using **Kotlin** to demonstrate the **Android Activity Lifecycle**. This experiment displays the lifecycle callbacks (`onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, `onRestart()`, and `onDestroy()`) using **Toast messages** and **Logcat**, helping understand how an Activity behaves during different user interactions.
 
 ---
 
-## ✨ Features
+# 📖 About the Project
 
-- 📱 Single Activity Android Application
+The Android Activity Lifecycle defines how an activity is created, started, resumed, paused, stopped, restarted, and destroyed.
+
+This application demonstrates every lifecycle method by displaying a Toast message and writing logs whenever the activity changes its state.
+
+The project is developed as **Experiment 2** for the **Mobile Application Development (MAD) Laboratory**.
+
+---
+
+# ✨ Features
+
+- 📱 Single Activity Application
 - 💻 Developed using Kotlin
-- 📝 Displays custom text using `TextView`
-- 🎯 UI designed with `ConstraintLayout`
-- 📐 Center-aligned text
-- 📲 Supports Edge-to-Edge display
-- 🧩 Window Insets handling using AndroidX
-- ✅ Successfully tested on Android Emulator (API 33)
+- 🔄 Demonstrates all Android Activity Lifecycle methods
+- 🍞 Displays lifecycle callbacks using Toast messages
+- 📄 Lifecycle events shown in Logcat
+- 🎨 Simple and user-friendly interface
+- 📲 Successfully tested on Android Emulator
 
 ---
 
-## 🛠️ Technologies Used
+# 📚 Activity Lifecycle Methods Demonstrated
+
+| Method | Description |
+|---------|-------------|
+| onCreate() | Called when the Activity is first created |
+| onStart() | Called when the Activity becomes visible |
+| onResume() | Called when the Activity comes to the foreground |
+| onPause() | Called when another Activity partially covers it |
+| onStop() | Called when the Activity is no longer visible |
+| onRestart() | Called before restarting a stopped Activity |
+| onDestroy() | Called before the Activity is destroyed |
+
+---
+
+# 🛠️ Technologies Used
 
 | Component | Version |
 |-----------|---------|
@@ -32,9 +49,10 @@ This application demonstrates the fundamentals of Android application developmen
 | Minimum SDK | 24 |
 | Target SDK | 36 |
 | Compile SDK | 36 |
-| Android Gradle Plugin | 9.3.1 |
+| Android Gradle Plugin | Latest |
+| UI | ConstraintLayout |
 
-### AndroidX Libraries
+### Libraries Used
 
 - AndroidX Core KTX
 - AppCompat
@@ -44,26 +62,27 @@ This application demonstrates the fundamentals of Android application developmen
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
-Exp_1/
+MAD-Lab-Experiment-02-Android-Activity-Lifecycle/
+│
 ├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/
+│   │   │   │      └── MainActivity.kt
+│   │   │   ├── res/
+│   │   │   │      ├── layout/activity_main.xml
+│   │   │   │      ├── values/
+│   │   │   │      └── mipmap/
+│   │   │   └── AndroidManifest.xml
+│   │
 │   ├── build.gradle.kts
-│   └── src/
-│       ├── main/
-│       │   ├── java/com/example/exp_1/
-│       │   │   └── MainActivity.kt
-│       │   ├── res/
-│       │   │   ├── layout/activity_main.xml
-│       │   │   ├── values/strings.xml
-│       │   │   ├── values/colors.xml
-│       │   │   └── values/themes.xml
-│       │   └── AndroidManifest.xml
-│       ├── androidTest/
-│       └── test/
-├── gradle/
+│   └── proguard-rules.pro
+│
 ├── screenshots/
+├── gradle/
 ├── build.gradle.kts
 ├── settings.gradle.kts
 └── README.md
@@ -71,131 +90,80 @@ Exp_1/
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### Prerequisites
+## Prerequisites
 
-Before running the project, ensure you have:
+Before running the project, make sure you have:
 
 - Android Studio (Latest Stable Version)
-- Android SDK (API 36)
+- Android SDK
 - Android Emulator or Physical Android Device
-- Gradle (Automatically managed by Android Studio)
+- Gradle (Automatically downloaded)
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### Step 1: Clone the Repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
+git clone https://github.com/<your-username>/MAD-Lab-Experiment-02-Android-Activity-Lifecycle.git
 ```
 
-### Step 2: Open Android Studio
+### 2. Open Android Studio
 
-- Launch Android Studio
-- Select **Open**
-- Choose the cloned project folder
+- Click **Open**
+- Select the project folder
 
-### Step 3: Sync Gradle
+### 3. Sync Gradle
 
-Allow Android Studio to download all required dependencies.
+Wait until Gradle downloads all required dependencies.
 
-### Step 4: Run the Application
+### 4. Run the Project
 
-Click the **▶ Run** button and choose an emulator or connected Android device.
-
----
-
-## 📄 Source Code
-
-### MainActivity.kt
-
-```kotlin
-package com.example.exp_1
-
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { view, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-            insets
-        }
-    }
-}
-```
+Click the **▶ Run** button and select an emulator or connected Android device.
 
 ---
 
-### activity_main.xml
+# 📸 Screenshots
 
-```xml
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+Add your screenshots inside the **screenshots** folder.
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mobile Application Development"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
+| Main Screen | Toast Message | Logcat Output |
+|-------------|---------------|---------------|
+| ![](screenshots/home.png) | ![](screenshots/toast.png) | ![](screenshots/logcat.png) |
 
 ---
 
-## 📸 Screenshots
+# ▶️ How to Test the Lifecycle
 
-Create a folder named **screenshots** inside the project and add your screenshots.
+Perform the following actions and observe the lifecycle methods:
 
-| Default Output | Custom Text | Final Output |
-|---------------|-------------|--------------|
-| ![Default](screenshots/Screenshot%202026-07-25%20080919.png) | ![Custom](screenshots/Screenshot%202026-07-25%20081239.png) | ![Final](screenshots/Screenshot%202026-07-25%20081409.png) |
+- Launch the app
+- Press the Home button
+- Return to the app
+- Rotate the device
+- Press the Back button
+- Open another application
 
----
-
-## 🎯 Output
-
-The application runs successfully on the Android Emulator and displays the text:
-
-> **Mobile Application Development**
-
-at the center of the screen, confirming that the Android project has been successfully created and executed.
+Observe the Toast messages and Logcat output corresponding to each lifecycle callback.
 
 ---
 
-## 🎓 Academic Information
+# 🎯 Expected Output
+
+The application successfully displays the Android Activity Lifecycle methods through **Toast messages** and **Logcat**, allowing users to understand the sequence of lifecycle callbacks during different activity states.
+
+---
+
+# 🎓 Academic Information
 
 **Course:** Master of Computer Applications (MCA)
 
-**Subject:** Mobile Application Development Lab
+**Subject:** Mobile Application Development Laboratory
 
-**Experiment:** 1 – Hello World Android Application
+**Experiment:** 02 – Android Activity Lifecycle
 
 **University:** Jain (Deemed-to-be University)
 
@@ -203,9 +171,9 @@ at the center of the screen, confirming that the Android project has been succes
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Vishwajeet Singh**
+**Name:** Vishwajeet Singh
 
 **USN:** 25MCAR0219
 
@@ -219,6 +187,10 @@ at the center of the screen, confirming that the Android project has been succes
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project is developed for **educational purposes** as part of the **Mobile Application Development Laboratory** and is free to use for learning and academic reference.
+This project is created for **educational purposes** as part of the **Mobile Application Development (MAD) Laboratory** at **Jain (Deemed-to-be University)**. It is free to use for learning and academic reference.
+
+---
+
+## ⭐ If you found this project useful, don't forget to star the repository.
