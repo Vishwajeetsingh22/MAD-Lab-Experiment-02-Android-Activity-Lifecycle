@@ -126,14 +126,19 @@ Click the **▶ Run** button and select an emulator or connected Android device.
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-Add your screenshots inside the **screenshots** folder.
+<p align="center">
+  <img src="screenshots/home.png" width="250" alt="Main Screen"/>
+  <img src="screenshots/toast.png" width="250" alt="Toast Message"/>
+  <img src="screenshots/logcat.png" width="250" alt="Logcat Output"/>
+</p>
 
-| Main Screen | Toast Message | Logcat Output |
-|-------------|---------------|---------------|
-| ![](screenshots/home.png) | ![](screenshots/toast.png) | ![](screenshots/logcat.png) |
-
+<p align="center">
+  <b>Main Screen</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Toast Message</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Logcat Output</b>
+</p>
 ---
 
 # ▶️ How to Test the Lifecycle
